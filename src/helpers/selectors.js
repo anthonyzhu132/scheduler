@@ -1,5 +1,3 @@
-import { builtinModules } from "module";
-
 const AppointmentDay = (state, day) => {
   const days = state.days;
   if(days.length === 0) {
