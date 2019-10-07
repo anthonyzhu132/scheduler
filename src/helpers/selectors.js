@@ -64,7 +64,6 @@ const getInterviewerForDay = (InterviewForDay, interviewer) => {
 
 export function getInterviewersForDay(state, day) {
   const InterviewForDay = AppointmentDayInterviewer(state, day)
-  console.log("state.interviewers", state.interviewers)
   const AppSelectDay = getInterviewerForDay(InterviewForDay, state.interviewers);
     return AppSelectDay
   }
