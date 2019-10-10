@@ -6,8 +6,8 @@ Install dependencies with `npm install`.
 
 ## Utiziling Scheduler
 
-![Booking an appointment](/Users/anthonyzhu/lighthouse/scheduler/scheduler/docs/book-appointment.gif)
-![Editing an appointment](/Users/anthonyzhu/lighthouse/scheduler/scheduler/docs/edit-appointment.gif)
+![Booking an appointment](https://github.com/anthonyzhu132/scheduler/blob/master/docs/book-appointment.gif)
+![Editing an appointment](https://github.com/anthonyzhu132/scheduler/blob/master/docs/edit-appointment.gif)
 ## Running Jest Test Framework
 
 ```sh
