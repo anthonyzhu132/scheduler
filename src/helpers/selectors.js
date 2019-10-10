@@ -1,67 +1,50 @@
-const AppointmentDay = (state, day) => {
-  const days = state.days;
-  if(days.length === 0) {
-    return [];
-  }
-  for (let d of days) {
-    if(d.name === day) {
-      return d.appointments
-    }
-  }
-  return [];
-}
-
-const AppointmentForDay = (AppDay, appointments) => {
-  const arr = [];
-  for (let d of AppDay) {
-    if(appointments[d]) {
-      arr.push(appointments[d]);
-    }
-  }
-  return arr;
-}
-
 export function getAppointmentsForDay(state, day) {
-const AppDay = AppointmentDay(state, day)
-const AppSelectDay = AppointmentForDay(AppDay, state.appointments);
-  return AppSelectDay
+  const filteredDays = state.days.filter(days => days.name === day);
+  const result = [];
+  if (filteredDays.length === 0) {
+    return result;
+  }
+
+  const dayAppointments = filteredDays[0].appointments;
+
+  for (let keys in state.appointments) {
+    for (let index of dayAppointments) {
+      if (state.appointments[keys].id === index) {
+        result.push(state.appointments[keys]);
+      }
+    }
+  }
+  return result;
 }
 
 export function getInterview(state, interview) {
-  if(!interview) {
+  if (!interview) {
     return null;
   }
-  return {
-    "student": interview.student,
-    "interviewer": state.interviewers[interview.interviewer]
-  }
-}
-
-const AppointmentDayInterviewer = (state, day) => {
-  const days = state.days;
-  if(days.length === 0) {
-    return [];
-  }
-  for (let d of days) {
-    if(d.name === day) {
-      return d.interviewers
+  let newInterview = { ...interview };
+  for (let keys in state.interviewers) {
+    if (state.interviewers[keys].id === newInterview.interviewer) {
+      newInterview.interviewer = state.interviewers[keys];
+      return newInterview;
     }
   }
-  return [];
-}
-
-const getInterviewerForDay = (InterviewForDay, interviewer) => {
-  const arr = [];
-  for (let d of InterviewForDay) {
-    if(interviewer[d]) {
-      arr.push(interviewer[d]);
-    }
-  }
-  return arr;
 }
 
 export function getInterviewersForDay(state, day) {
-  const InterviewForDay = AppointmentDayInterviewer(state, day)
-  const AppSelectDay = getInterviewerForDay(InterviewForDay, state.interviewers);
-    return AppSelectDay
+  const filteredDays = state.days.filter(days => days.name === day);
+  const result = [];
+  if (filteredDays.length === 0) {
+    return result;
   }
+
+  const dayInterviewers = filteredDays[0].interviewers;
+
+  for (let keys in state.interviewers) {
+    for (let index of dayInterviewers) {
+      if (state.interviewers[keys].id === index) {
+        result.push(state.interviewers[keys]);
+      }
+    }
+  }
+  return result;
+}
