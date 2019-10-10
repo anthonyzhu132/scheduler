@@ -8,6 +8,8 @@ Install dependencies with `npm install`.
 
 ![Booking an appointment](https://github.com/anthonyzhu132/scheduler/blob/master/docs/book-appointment.gif)
 ![Editing an appointment](https://github.com/anthonyzhu132/scheduler/blob/master/docs/edit-appointment.gif)
+![Full Spots](https://github.com/anthonyzhu132/scheduler/blob/master/docs/full-spots-indicator.gif)
+
 ## Running Jest Test Framework
 
 ```sh
