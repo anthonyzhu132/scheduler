@@ -4,12 +4,10 @@
 
 Install dependencies with `npm install`.
 
-## Running Webpack Development Server
+## Utiziling Scheduler
 
-```sh
-npm start
-```
-
+![Booking an appointment](/Users/anthonyzhu/lighthouse/scheduler/scheduler/docs/book-appointment.gif)
+![Editing an appointment](/Users/anthonyzhu/lighthouse/scheduler/scheduler/docs/edit-appointment.gif)
 ## Running Jest Test Framework
 
 ```sh
